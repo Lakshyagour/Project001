@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>'Crop Pred'</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">      
+</head>
+<style>
+body  {
+  background-image: url("static/crop1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.myDiv {
+  text-align: center;
+}
+
+</style>
+<body >
+ <nav class="navbar navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href='{{url_for('pred_home_page')}}'>HOME</a>
+
+            <a class="navbar-brand" href='{{url_for('pred_home_page')}}'>PREDICT MORE</a>
+        </div>
+    </nav>
+
+<div class="myDiv">
+	<h1 style="color:white;font-size:400%;font-family:verdana;"> The Most Suitable Crops are</h1>
+	<h2 style="color:white;font-size:200%;font-family:courier;">(for the given paramaters along with percentage selection)</h2><br><br>
+	
+	<h1 style="color:white;font-size:200%;font-family:verdana;">
+	<ul>
+       {%for i in range(0,4)%}
+	<li> {{crop[i]}}:{{precent[i]}}</li>
+	{%endfor%}
+   	<ul>
+	<h1>
+
+    
+</body>
+</html>
